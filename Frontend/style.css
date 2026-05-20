@@ -1,0 +1,269 @@
+body {
+  margin: 0;
+  padding: 40px 20px;
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle at top left, #dff4ff, transparent 30%),
+    radial-gradient(circle at bottom right, #f4e7d8, transparent 30%), #f8fafc;
+  min-height: 100vh;
+  color: #2d3748;
+}
+
+.container {
+  max-width: 850px;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
+  border-radius: 28px;
+  padding: 35px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 30px;
+  font-size: 38px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #4f7aa3;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 150px 130px;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+input,
+select {
+  border: none;
+  padding: 14px;
+  border-radius: 14px;
+  background: #ffffff;
+  font-size: 14px;
+  box-shadow: inset 0 0 0 1px #d9e8f2;
+  transition: 0.2s ease;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  transform: translateY(-1px);
+  box-shadow: 0 0 0 3px rgba(135, 206, 235, 0.25);
+}
+
+button {
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #87ceeb, #6cb6d6);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(108, 182, 214, 0.35);
+}
+
+.controls {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.controls input,
+.controls select {
+  flex: 1;
+}
+
+#counter {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+
+.counter-box {
+  background: white;
+  padding: 14px 22px;
+  border-radius: 16px;
+  min-width: 120px;
+  text-align: center;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  transition: 0.2s ease;
+}
+
+.counter-box:hover {
+  transform: translateY(-2px);
+}
+
+.counter-title {
+  display: block;
+  font-size: 13px;
+  color: #7b8794;
+  margin-bottom: 6px;
+}
+
+.counter-number {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.total .counter-number {
+  color: #38bdf8;
+}
+
+.completed .counter-number {
+  color: #22c55e;
+}
+
+.pending .counter-number {
+  color: #ef4444;
+}
+
+#list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.task-item {
+  background: white;
+  border-radius: 18px;
+  padding: 18px;
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.2s ease;
+  border: 1px solid #edf2f7;
+  position: relative;
+  overflow: hidden;
+}
+
+.task-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
+}
+
+.task-item span {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.completed span {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+small {
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-right: 8px;
+}
+
+.Work small {
+  background: #dff4ff;
+  color: #3d7ea6;
+}
+
+.Personal small {
+  background: #f5e7d7;
+  color: #9a6c3f;
+}
+
+.School small {
+  background: #fff0cf;
+  color: #af7a11;
+}
+
+.deleteBtn {
+  background: #ef4444;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: 12px;
+}
+
+.deleteBtn:hover {
+  background: #dc2626;
+}
+
+#loading {
+  text-align: center;
+  padding: 12px;
+  font-weight: 600;
+  color: #4f7aa3;
+}
+
+#notifications {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 999;
+}
+
+.notification {
+  padding: 14px 18px;
+  margin-bottom: 12px;
+  border-radius: 14px;
+  color: white;
+  font-weight: 500;
+  animation: slideIn 0.3s ease;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+.notification.success {
+  background: #22c55e;
+}
+
+.notification.error {
+  background: #ef4444;
+}
+
+.notification.info {
+  background: #38bdf8;
+}
+
+.fade-out {
+  opacity: 0;
+  transition: 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(80px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  form {
+    grid-template-columns: 1fr;
+  }
+
+  .controls {
+    flex-direction: column;
+  }
+
+  .task-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}

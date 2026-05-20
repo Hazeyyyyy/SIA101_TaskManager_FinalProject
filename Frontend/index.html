@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Task Manager</h1>
+
+      <form id="form">
+        <input type="text" id="taskInput" placeholder="Enter a task" />
+
+        <select id="categoryInput">
+          <option value="Work">Work</option>
+          <option value="Personal">Personal</option>
+          <option value="School">School</option>
+        </select>
+
+        <button type="submit">Add Task</button>
+      </form>
+
+      <div class="controls">
+        <input type="text" id="searchInput" placeholder="Search task..." />
+
+        <select id="filterCategory">
+          <option value="All">All</option>
+          <option value="Work">Work</option>
+          <option value="Personal">Personal</option>
+          <option value="School">School</option>
+        </select>
+      </div>
+
+      <div id="counter">
+        <div class="counter-box total">
+          <span class="counter-title">Total</span>
+          <span id="totalCount" class="counter-number">0</span>
+        </div>
+
+        <div class="counter-box completed">
+          <span class="counter-title">Completed</span>
+          <span id="completedCount" class="counter-number">0</span>
+        </div>
+
+        <div class="counter-box pending">
+          <span class="counter-title">Pending</span>
+          <span id="pendingCount" class="counter-number">0</span>
+        </div>
+      </div>
+
+      <div id="loading" class="hidden">Loading...</div>
+
+      <div id="notifications"></div>
+
+      <ul id="list"></ul>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
